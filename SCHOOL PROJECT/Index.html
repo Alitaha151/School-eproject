@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .header {
+      min-height: 100vh;
+      width: 100%;
+      background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7));
+      background-image: url(IMAGES/Gallery\ of\ Duchess\ Park\ Secondary\ School\ _\ Hughes\ Condon\ Marler\ Architects\ \ -\ 6.jpeg);
+      background-position: center;
+      background-size: cover;
+      position: relative;
+    }
+
+    nav {
+      display: flex;
+      padding: 2% 6%;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav img {
+      width: 150px;
+    }
+
+    .nav-links {
+      flex: 1;
+      text-align: right;
+
+    }
+
+    .nav-links ul li {
+      list-style: none;
+      display: inline-block;
+      padding: 8px 12px;
+      position: relative;
+    }
+
+    .nav-links ul li::after {
+      width: 0px;
+      height: 2px;
+      background-color: #f44366;
+      display: block;
+      margin: auto;
+      transition: 0, 5s;
+    }
+
+    .nav-links ul li:hover::after {
+      width: 100%;
+
+    }
+
+    .nav-links ul li a {
+      text-decoration: none;
+      color: white;
+      font-size: 15px;
+      font-family: sans-serif;
+    }
+
+    .text-box {
+      width: 90%;
+      color: white;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+
+    .text-box h1 {
+      font-size: 50px;
+    }
+
+    .text-box p {
+      margin: 10px 0 40px;
+      font-size: 14px;
+      color: white;
+    }
+
+    .hero-btn {
+      display: inline-block;
+      text-decoration: none;
+      color: white;
+      border: 1px solid white;
+      padding: 12px 34px;
+      font-size: 13px;
+      background: transparent;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .hero-btn:hover {
+      border: 1px solid #f44366;
+      background: #f44366;
+      transition: 1s;
+    }
+
+    .course{
+      width: 80%;
+      margin: auto;
+      text-align: center;
+      padding-top: 100px;
+    }
+
+    h1 {
+      font-size: 36px;
+      font-weight: 600;
+    }
+
+    P {
+      color: #777;
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 10px;
+
+    }
+
+    .row {
+      margin-top: 5%;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .course-col {
+      flex-basis: 31%;
+      background: #fff3f3;
+      border-radius: 10px;
+      margin-bottom: 5%;
+      padding: 20px;
+      box-sizing: border-box;
+      transition: 0.5s;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    h3 {
+      text-align: center;
+      font-weight: 600;
+      margin: 10px 0;
+    }
+
+    .course-col:hover {
+      box-shadow: 0 0 20px 0px rgba(221, 4, 4, 0, 2);
+    }
+
+
+    .campus {
+      width: 80%;
+      margin: auto;
+      text-align: center;
+      padding-top: 50px;
+    }
+
+    .campus-col {
+      flex-basis: 32%;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .campus-col img {
+      width: 100%;
+      display: block;
+    }
+
+    .layer {
+      background: transparent;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: 0.5s;
+    }
+
+    .layer:hover {
+      background: rgba(226, 0, 0, 0.7);
+
+    }
+
+    .layer h3 {
+      width: 100%;
+      font-weight: 500;
+      color: white;
+      font-size: 26px;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      position: absolute;
+      opacity: 0;
+      transition: 0.5s;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .layer:hover h3 {
+      bottom: 49%;
+      opacity: 1;
+    }
+
+    .facilities {
+      width: 80%;
+      margin: auto;
+      text-align: center;
+      padding: 100px;
+    }
+
+    .facilities-col {
+      flex-basis: 31%;
+      border-radius: 10px;
+      margin-bottom: 5%;
+      text-align: left;
+    }
+
+    .facilities-col img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .facilities-col p {
+      padding: 0;
+    }
+
+    .facilities-col h3 {
+      margin-top: 16px;
+      margin-bottom: 15px;
+      text-align: left;
+    }
+
+    .testimonials {
+      width: 80%;
+      margin: auto;
+      padding-top: 100px;
+      text-align: center;
+    }
+    .testimonials-col{
+      flex-basis: 44%;
+      border-radius: 10px;
+      margin-bottom: 5%;
+      text-align: left;
+      background: #fff3f3;
+      padding: 25px;
+      cursor: pointer;
+      display: flex;
+    }
+
+    .testimonials-col img{
+      height: 40px;
+      margin-left: 5px;
+      margin-right: 30px;
+      border-radius: 50%;
+    }
+
+    .testimonials-col p{
+      padding: 0;
+
+    }
+
+    .testimonials-col h3{
+      margin-top: 15px;
+      text-align: left;
+    }
+
+    .testimonials-col .fa{
+      color:blue;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <section class="header">
+
+    <nav>
+      <a href="Index.html"> <img src="IMAGES/NAVBAR SCHOOL LOGO.jpeg"></a>
+      <div class="nav-links">
+        <ul>
+          <li><a href="">Home</a></li>
+          <li><a href="">About</a></li>
+          <li><a href="">Courses</a></li>
+          <li><a href="">Blog</a></li>
+          <li><a href="">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="text-box">
+      <h1>Inspiring Minds, Transforming Lives</h1>
+      <p>Using an Advance quality scoring Algorithm and
+        Machine learning, we ensure that you receive more <br>ideas
+        from our top-qualities creatives.
+
+      </p>
+      <a href="" class="hero-btn">Visit us to know more</a>
+
+    </div>
+  </section>
+
+
+
+  <!-- Courses -->
+
+
+
+  <section class="course">
+    <h1>Courses we offer</h1>
+    <p>Using an Advance quality scoring Algorithm and
+      Machine learning, we ensure that you receive more <br>ideas
+      from our top-qualities creatives.</p>
+
+      <div class="course-col">
+        <h3>Intermediate</h3>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde provident aliquam quibusdam, totam hic
+          explicabo, distinctio corporis eaque alias odit perspiciatis. Dolorum aut odit blanditiis voluptate, vitae
+          consequatur? Rem, iusto.</p>
+      </div>
+
+      
+        <div class="course-col">
+          <h3>Degree</h3>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde provident aliquam quibusdam, totam hic
+            explicabo, distinctio corporis eaque alias odit perspiciatis. Dolorum aut odit blanditiis voluptate, vitae
+            consequatur? Rem, iusto.</p>
+        </div>
+
+        
+          <div class="course-col">
+            <h3>Post Graduate</h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde provident aliquam quibusdam, totam hic
+              explicabo, distinctio corporis eaque alias odit perspiciatis. Dolorum aut odit blanditiis voluptate, vitae
+              consequatur? Rem, iusto.</p>
+          </div>
+
+
+  </section>
+
+
+  <!-- .....................Campus................. -->
+
+  <section class="campus">
+    <h1>Our Global Campus</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+
+    <div class="row">
+
+      <div class="campus-col">
+
+        <img src="IMAGES/img3.jpeg">
+        <div class="layer">
+          <h3>Karachi</h3>
+        </div>
+      </div>
+      <div class="campus-col">
+
+        <img src="IMAGES/img4.jpeg">
+        <div class="layer">
+          <h3>Islamabad</h3>
+        </div>
+      </div>
+      <div class="campus-col">
+
+        <img src="IMAGES/img5.jpeg">
+        <div class="layer">
+          <h3>Lahore</h3>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ............facilities............. -->
+
+  <section class="facilities">
+    <h1>Our Facilities</h1>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+
+    <div class="row">
+
+      <div class="facilities-col">
+        <img src="IMAGES/library 1.jpeg" alt="" srcset="">
+        <h3>World Class Library</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, tempore. Eum debitis ad molestias? Culpa
+          cumque quod fugiat natus unde deleniti animi cupiditate soluta, quidem quas officiis autem assumenda
+          distinctio.</p>
+      </div>
+      <div class="facilities-col">
+        <img src="IMAGES/play ground.jpeg" alt="" srcset="">
+        <h3>Largest Play Ground</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, tempore. Eum debitis ad molestias? Culpa
+          cumque quod fugiat natus unde deleniti animi cupiditate soluta, quidem quas officiis autem assumenda
+          distinctio.</p>
+      </div>
+      <div class="facilities-col">
+        <img src="IMAGES/cafetaria.jpeg" alt="" srcset="">
+        <h3>Tasty & Healthy Food</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, tempore. Eum debitis ad molestias? Culpa
+          cumque quod fugiat natus unde deleniti animi cupiditate soluta, quidem quas officiis autem assumenda
+          distinctio.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ................ -->
+
+  <section class="testimonials">
+    <h1>What our student Says</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+
+    <div class="row">
+
+      <div class="testimonials-col">
+        <img src="IMAGES/card 1.png" alt="">
+        <div>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus distinctio molestiae quas sunt officiis
+            ipsam impedit dolor, sint veritatis facilis. Eius, quasi voluptates praesentium accusantium molestiae
+            nostrum ratione mollitia consectetur.</p>
+            <h3>Taha Ali Siddiqui</h3>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star-o"></i>
+        </div>
+      </div>
+
+      <div class="testimonials-col">
+        <img src="IMAGES/card 2.png" alt="">
+        <div>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus distinctio molestiae quas sunt officiis
+            ipsam impedit dolor, sint veritatis facilis. Eius, quasi voluptates praesentium accusantium molestiae
+            nostrum ratione mollitia consectetur.</p>
+            <h3>Qambar</h3>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star-half-o"></i>
+        </div>
+      </div>
+
+
+
+    </div>
+
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Navbar
+  <div class="main-container">
+    <nav class="navbar navbar-expand-lg bg-body-danger">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"><img src="IMAGES/NAVBAR SCHOOL LOGO.jpeg" width="120px">Global School
+          Center</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">About</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Classes
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Primary Classes</a></li>
+                <li><a class="dropdown-item" href="#">Secondary Classes</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Teachers</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Contacts</a>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+
+  <h1 class="main-heading">Welcome to the Website</h1>
+  <p class="first-para">Education is a vital tool that helps people face life's challenges and differentiate themselves
+    from other living beings. It can be a doorway to success.Spreading educational awareness can help make education
+    accessible.Educational content can include books, newspapers, podcasts, and puzzles. The goal of educational content
+    is to promote learning. </p>
+
+
+
+
+  <div class="container">
+    <div class="row mt-3 text-center">
+      <div class="col-md-3 col-sm-4">
+         <div class="card">
+          <img src="IMAGES/card 1.png" class="card-img-center p-1">
+          <div class="card-body">
+            <h5 class="card-title">Awesome Teacher</h5>
+            <p class="card-text">Some qualities of a good teacher include skills in communication, listening,
+              collaboration,adaptability, empathy and patience.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-4">
+        <div class="card">
+          <img src="IMAGES/card 2.png" class="card-img-center p-1">
+          <div class="card-body">
+            <h5 class="card-title">Global Certificate</h5>
+            <p class="card-text">A certificate of registration issued by an organization like Global Certification to
+              indicate that a business has achieved international recognition for its quality.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-sm-4">
+        <div class="card">
+          <img src="IMAGES/card 3.png" class="card-img-center p-1">
+          <div class="card-body">
+            <h5 class="card-title">Best Program</h5>
+            <p class="card-text">Computer Science Distilled: Learn the Art of Solving Computational Problems by Wladston
+              Ferreira Filho. The Hidden Language of Computer Hardware and Software" by Charles Petzold.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-sm-4">
+        <div class="card">
+          <img src="IMAGES/card 4.png" class="card-img-center p-1">
+          <div class="card-body">
+            <h5 class="card-title">Student Support Service</h5>
+            <p class="card-text">Student support services are a range of programs, resources, and initiatives that
+              universities provide to help students succeed academically and personally.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <img src="IMAGES/img1.jpeg" width="" height="200px">
+  <img src="IMAGES/img2.jpeg" width="" height="200px">
+  <img src="IMAGES/img3.jpeg" width="" height="200px">
+  <img src="IMAGES/img4.jpeg" width="" height="200px">
+  <img src="IMAGES/img5.jpeg" width="" height="200px">
+
+
+
+  <footer>
+    <div>
+      <h3>About</h3>
+      <p>We provide the best services to make your life easier.</p>
+    </div>
+    <div>
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="Home.html">Home</a></li>
+        <li><a href="Link.html">Link</a></li>
+        <li><a href="Contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <section id="contact">
+        <h2>Contact</h2>
+        <p>Email: info@biek.edu.pk</p>
+        <p>Phone: 0333-9206444</p>
+    </div>
+    </section>
+  </footer> -->
+
+
+
+
+
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
